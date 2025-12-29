@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getValidNumber(message = "Enter a number:") {
+      let num;
+
+      while (true) {
+        let input = prompt(message);
+
+        if (input === null || input.trim() === "") {
+          message = "Please enter a number. Try again:";
+          continue;
+        }
+
+        num = Number(input);
+        if (!isNaN(num)) return num;
+        message = "Invalid input! Please enter a valid number:";
+      }
+    }
+
+    alert(
+      `Welcome!\nThis is JavaScript assignment: 
+"Basic Arithmetic Operation - Fundamental of Computer Programming (FOCP)"`
+    );
+
+    let number1 = getValidNumber();
+    let number2 = getValidNumber();
+    let sum = number1 + number2;
+
+    console.log("Sum:", sum);
+
+    alert(`${sum}\nCheck console, it's logged there as per the assignment.`);
+  </script>
+</body>
+</html>
